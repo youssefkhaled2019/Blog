@@ -1,3 +1,12 @@
+# ================= youssef ==================
+env/
+openproject.bat
+go.bat
+runserver.bat
+help.txt
+help2.txt
+SH/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
