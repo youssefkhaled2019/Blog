@@ -6,7 +6,7 @@ runserver.bat
 help.txt
 help2.txt
 SH/
-
+media/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

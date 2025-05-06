@@ -5,5 +5,12 @@ from django.db import models
 
 # unique email
 from django.contrib.auth.models import User
-User._meta.get_field('email')._unique = True
 
+class Profile(models.Model):
+ user_id=models.OneToOneField(User,on_delete=models.CASCADE)
+ image=models.ImageField(default="default.jpg",upload_to="profile_pics")
+ def __str__(self):
+  return f'{ self.user_id.username} profile '
+
+User._meta.get_field('email')._unique = True
+# python manage.py migrate --fake 
