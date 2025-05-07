@@ -82,12 +82,12 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
-/* article{
-  max-height: 450px;
 
-  overflow: hidden;
-}
-article p ,article h1{
- 
-  text-overflow: ellipsis;
-} */
+
+.link-button { 
+  background: none;
+  border: none;
+  color: #210feb;
+  text-decoration: underline;
+  cursor: pointer; 
+ } 

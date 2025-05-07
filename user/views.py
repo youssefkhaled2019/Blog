@@ -4,7 +4,7 @@ from django.contrib import messages
 from .forms  import UserRegisterForm
 from django.contrib.auth.decorators import login_required 
 from .forms  import UserRegisterForm ,UserUpdateForm,ProfileUpdateForm
-
+from .models import Profile
 # Create your views here.
 def register(request):
     if (request.method=="POST"):
@@ -41,8 +41,14 @@ def profile(request):
     
      
           else:
-               user_form=UserUpdateForm(instance=request.user)
-               profile_form=ProfileUpdateForm(instance=request.user.profile)
+               try:
+                    user_form=UserUpdateForm(instance=request.user)
+                    profile_form=ProfileUpdateForm(instance=request.user.profile)
+               except:
+                    #if you create acount not have image as default value
+                    user_form=UserUpdateForm(instance=request.user)
+                    Profile.objects.create(user_id=request.user)
+                    profile_form=ProfileUpdateForm(instance=request.user.profile)
 
           context={
 

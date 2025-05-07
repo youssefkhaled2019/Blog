@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 from django.utils import timezone
@@ -18,7 +18,8 @@ class Post(models.Model):
     
     
     
-    
+    def get_absolute_url(self):
+        return reverse('post-detail',kwargs={"pk":self.pk})
     
 #auto_now=True update date every time post update 
 # auto_now_add==True add time now when data created  only not change in update 
