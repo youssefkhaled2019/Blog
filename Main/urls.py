@@ -23,10 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("blog.urls")),#blog/
-    path('register/', users_views.register ,name="register"),
-    path('profile/', users_views.profile ,name="profile"),
-    path('login/', auth_views.LoginView.as_view(template_name="users/login.html") ,name="login"),
-    path('logout/', auth_views.LogoutView.as_view(template_name="users/logout.html",next_page='login') ,name="logout"),
+    path('user/', include("user.urls")),#user/
+  
 
 ]
 if settings.DEBUG:
